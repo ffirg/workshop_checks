@@ -1,0 +1,9 @@
+---
+
+- name: "RUN COMMON TASK CHECKS"
+  include_tasks: common.yml
+  tags: common
+
+- name: "RUN TOWER TASK CHECKS"
+  include_tasks: tower.yml
+  tags: tower

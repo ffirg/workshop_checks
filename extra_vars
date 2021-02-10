@@ -1,0 +1,28 @@
+#
+# change these values:
+#
+
+# set this to the workshop type: rhel currently only option
+workshop_type: rhel
+
+# the GUID from the RHPDS provisioning
+guid: <GUID>
+
+# set this to the password that RHPDS has generated
+student_password: GNhSpAl5AcKMdz
+
+# number of student envs to check
+students: <NUMBER>
+
+# we reserve student1 for instructor tooling, so start at student2
+# reset to 1 if you want to check student1 as well
+start_at_student: 2
+
+#
+# no need to change these unless something changes in RHPDS or the core provisioner
+#
+
+lab_url: "{{ guid }}.open.redhat.com"
+tower_username: admin
+workshop_inventory: "Workshop Inventory"
+workshop_inventory_hosts: 4

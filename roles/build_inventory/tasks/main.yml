@@ -1,0 +1,18 @@
+---
+
+- name: Create boilerplate hosts inventory file
+  template:
+    src: hosts.j2
+    dest: hosts
+  tags: setup
+
+- name: Add student lab hosts to inventory file
+  lineinfile:
+    path: hosts
+    line: student{{ student }}.{{ guid }}.open.redhat.com ansible_user=student{{ student }}
+  loop: "{{ range(start_at_student,students+1,1) | list }}"
+  loop_control:
+    loop_var: student
+  tags: setup
+
+- meta: refresh_inventory

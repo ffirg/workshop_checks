@@ -1,0 +1,37 @@
+---
+
+- name: "Check Tower front door - can we login as {{ tower_username }}"
+  uri:
+    url: "https://{{ inventory_hostname }}/api/v2/credentials?name={{tower_username}}"
+    method: GET
+    user: "{{ tower_username }}"
+    password: "{{ student_password }}"
+    validate_certs: no
+    force_basic_auth: yes
+    status_code:
+      - 200
+  register: http
+  tags: tower
+
+- name: Check Tower Inventory Setup
+  uri:
+    url: "https://{{ inventory_hostname }}/api/v2/inventories/Workshop%20Inventory++Default/hosts"
+    method: GET
+    user: "{{ tower_username }}"
+    password: "{{ student_password }}"
+    validate_certs: no
+    force_basic_auth: yes
+    status_code:
+      - 200
+  register: found
+  tags: tower
+  when: http.status == 200
+
+- name: "Do we have {{ workshop_inventory_hosts }} hosts in the inventory?"
+  assert:
+    that:
+      - found.json.count ==  workshop_inventory_hosts
+    fail_msg: "Expected {{ workshop_inventory_hosts }} hosts but found {{ found.json.count }}"
+    quiet: true
+  tags: tower
+  when: http.status == 200

@@ -1,0 +1,7 @@
+---
+
+- name: Check we can SSH to the control host
+  ping:
+    data: hello
+  ignore_errors: true
+  tags: common

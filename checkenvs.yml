@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - { role: build_inventory }
+
+- hosts: lab_hosts
+  gather_facts: false
+
+  roles:
+    - { role: rhel_checks, when: workshop_type == 'rhel' }
