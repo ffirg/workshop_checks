@@ -11,6 +11,7 @@ This will do things like ssh to the control nodes, check the Tower API for vario
 In order to run, clone this repo and change a few values in extra_vars:
 
 ```bash
+git clone https://github.com/ffirg/workshop_checks.git
 cd workshop_checks
 vi extra_vars
 ```
