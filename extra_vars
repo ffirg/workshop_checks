@@ -26,3 +26,6 @@ lab_url: "{{ guid }}.open.redhat.com"
 tower_username: admin
 workshop_inventory: "Workshop Inventory"
 workshop_inventory_hosts: 4
+tower_inventory_name: "Workshop Inventory"
+tower_default_org: "Default"
+tower_workshop_credential_name: "Workshop Credential"
