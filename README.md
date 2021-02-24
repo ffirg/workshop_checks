@@ -1,6 +1,6 @@
 # workshop_checks
 
-A smorgsbord of Ansible bits and pieces to help run RHPDS based workshops
+A smorgasbord of Ansible bits and pieces to help run RHPDS based workshops
 
 ## checkenvs.yml
 
@@ -24,3 +24,14 @@ ansible-playbook checkenvs.yml -e @extra_vars
 
 This will create the inventory hosts file for you and run the checks.
 Anything that comes back failed is a problem!
+
+## fix_tower_config.yml
+
+If you want to try to fix misconfigured tower config, then:
+
+ - add the 'failed' hosts into the [fix_tower_hosts] group of the hosts file
+ - run the playbook
+
+```bash
+ansible-playbook fix_tower_config.yml -e @extra_vars
+```
