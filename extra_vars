@@ -9,7 +9,7 @@ workshop_type: rhel
 guid: <GUID>
 
 # set this to the password that RHPDS has generated
-student_password: Mk3EzB2MmPpBJ7
+student_password: <PASSWORD>
 
 # number of student envs to check
 students: <NUMBER>
