@@ -1,0 +1,10 @@
+---
+
+- name: "Fix Tower Workshop Credentials"
+  include_tasks: credentials.yml
+  tags: tower
+
+- name: "Fix Tower Workshop Inventory"
+  include_tasks: inventory.yml
+  tags: tower
+

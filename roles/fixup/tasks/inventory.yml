@@ -1,0 +1,14 @@
+---
+
+- name: Correct Workshop Inventory
+  tower_inventory:
+    name: "{{ tower_inventory_name }}"
+    organization: "{{ tower_default_org }}"
+    state: present
+    tower_username: "{{ tower_username }}"
+    tower_password: "{{ student_password }}"
+    validate_certs: false
+
+- name: Import Workshop Inventory
+  shell: 'awx-manage inventory_import --source=lab_inventory/hosts --inventory-name="Workshop Inventory"'
+  become: yes
