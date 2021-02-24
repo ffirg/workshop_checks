@@ -6,6 +6,8 @@ A smorgasbord of Ansible bits and pieces to help run RHPDS based workshops
 
 Use this to run some simple sanity checks against the provisioned labs.
 
+*IT CURRENTLY ONLY SUPPORTS THE RHEL WORKSHOP TYPE*
+
 This will do things like ssh to the control nodes, check the Tower API for various settings.
 
 In order to run, clone this repo and change a few values in extra_vars:
@@ -35,3 +37,6 @@ If you want to try to fix misconfigured tower config, then:
 ```bash
 ansible-playbook fix_tower_config.yml -e @extra_vars
 ```
+
+You should just be left with 'unreachable' hosts which alas I cannot fix!
+(Make sure you don't try to use these in the workshops)
