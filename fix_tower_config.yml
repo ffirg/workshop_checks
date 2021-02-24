@@ -1,0 +1,7 @@
+---
+
+- hosts: fix_tower_hosts
+  gather_facts: false
+
+  roles:
+    - { role: fixup, when: workshop_type == 'rhel' }
