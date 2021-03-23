@@ -11,4 +11,4 @@
   gather_facts: false
 
   roles:
-    - { role: rhel_checks, when: workshop_type == 'rhel' }
+    - { role: core_checks, when: workshop_type == 'rhel' or workshop_type == 'networking' }

@@ -27,11 +27,11 @@
   tags: tower
   when: http.status == 200
 
-- name: "Do we have {{ workshop_inventory_hosts }} hosts in the inventory?"
+- name: "Do we have the right number of hosts in the inventory?"
   assert:
     that:
-      - found.json.count ==  workshop_inventory_hosts
-    fail_msg: "Expected {{ workshop_inventory_hosts }} hosts but found {{ found.json.count }}"
+      - found.json.count ==  workshop_config[workshop_type].workshop_inventory_hosts
+    fail_msg: "Expected {{ workshop_config[workshop_type].workshop_inventory_hosts }} hosts but found {{ found.json.count }}"
     quiet: true
   tags: tower
   when: http.status == 200

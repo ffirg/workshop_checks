@@ -2,8 +2,8 @@
 # change these values:
 #
 
-# set this to the workshop type: rhel currently only option
-workshop_type: rhel
+# set this to the workshop type: rhel or networking only currently offered options
+workshop_type: networking
 
 # the GUID from the RHPDS provisioning
 guid: <GUID>
@@ -23,9 +23,16 @@ start_at_student: 2
 #
 
 lab_url: "{{ guid }}.open.redhat.com"
+
 tower_username: admin
-workshop_inventory: "Workshop Inventory"
-workshop_inventory_hosts: 4
 tower_inventory_name: "Workshop Inventory"
 tower_default_org: "Default"
 tower_workshop_credential_name: "Workshop Credential"
+
+workshop_config:
+  rhel:
+    workshop_inventory: "Workshop Inventory"
+    workshop_inventory_hosts: 4 # ansible-1, node1-3
+  networking:
+    workshop_inventory: "Workshop Inventory"
+    workshop_inventory_hosts: 5 # ansible-1, rtr1-4 = multivendor setup
