@@ -4,6 +4,10 @@ A smorgasbord of Ansible bits and pieces to help run RHPDS based workshops
 
 ## checkenvs.yml
 
+It's quick, it's dirty and it's a hack. But it might get you out of a hole when running a workshop!
+
+Sometimes the RHPDS provisioning 'works' but actually nodes are unreachable or misconfigured. It's rare but it happens.
+
 Use this to run some simple sanity checks against the provisioned labs.
 
 *IT CURRENTLY ONLY SUPPORTS THE RHEL or NETWORKING (multi vendor) WORKSHOP TYPE*
@@ -28,6 +32,8 @@ This will create the inventory hosts file for you and run the checks.
 Anything that comes back failed is a problem!
 
 ## fix_tower_config.yml
+
+Very occasionally, rhel workshops fail to import inventory I've noticed. You won't notice this until the student reaches the tower exercises :(
 
 If you want to try to fix misconfigured tower config, then:
 
