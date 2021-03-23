@@ -6,7 +6,7 @@ A smorgasbord of Ansible bits and pieces to help run RHPDS based workshops
 
 Use this to run some simple sanity checks against the provisioned labs.
 
-*IT CURRENTLY ONLY SUPPORTS THE RHEL WORKSHOP TYPE*
+*IT CURRENTLY ONLY SUPPORTS THE RHEL or NETWORKING (multi vendor) WORKSHOP TYPE*
 
 This will do things like ssh to the control nodes, check the Tower API for various settings.
 
