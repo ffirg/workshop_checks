@@ -9,7 +9,7 @@
 - name: Add student lab hosts to inventory file
   lineinfile:
     path: hosts
-    line: student{{ student }}.{{ guid }}.open.redhat.com ansible_user=student{{ student }}
+    line: student{{ student }}.{{ lab_url }} ansible_user=student{{ student }}
   loop: "{{ range(start_at_student,students+1,1) | list }}"
   loop_control:
     loop_var: student
