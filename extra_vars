@@ -3,7 +3,7 @@
 #
 
 # set this to the workshop type: rhel or networking only currently offered options
-workshop_type: networking
+workshop_type: rhel
 
 # the GUID from the RHPDS provisioning
 guid: <GUID>
@@ -22,7 +22,7 @@ start_at_student: 2
 # no need to change these unless something changes in RHPDS or the core provisioner
 #
 
-lab_url: "{{ guid }}.open.redhat.com"
+lab_url: "{{ guid }}.example.opentlc.com"
 
 tower_username: admin
 tower_inventory_name: "Workshop Inventory"
